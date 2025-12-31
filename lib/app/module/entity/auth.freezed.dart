@@ -12,7 +12,8 @@ part of 'auth.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 Auth _$AuthFromJson(Map<String, dynamic> json) {
   return AuthEntity.fromJson(json);
@@ -25,37 +26,36 @@ mixin _$Auth {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) entity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? entity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? entity,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthEntity value) entity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthEntity value)? entity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthEntity value)? entity,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Auth to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Auth
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AuthCopyWith<Auth> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -77,30 +77,33 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Auth
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? email = null,
-    Object? password = null,
-  }) {
-    return _then(_value.copyWith(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? email = null, Object? password = null}) {
+    return _then(
+      _value.copyWith(
+            email: null == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                      as String,
+            password: null == password
+                ? _value.password
+                : password // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$AuthEntityImplCopyWith<$Res> implements $AuthCopyWith<$Res> {
   factory _$$AuthEntityImplCopyWith(
-          _$AuthEntityImpl value, $Res Function(_$AuthEntityImpl) then) =
-      __$$AuthEntityImplCopyWithImpl<$Res>;
+    _$AuthEntityImpl value,
+    $Res Function(_$AuthEntityImpl) then,
+  ) = __$$AuthEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password});
@@ -111,25 +114,27 @@ class __$$AuthEntityImplCopyWithImpl<$Res>
     extends _$AuthCopyWithImpl<$Res, _$AuthEntityImpl>
     implements _$$AuthEntityImplCopyWith<$Res> {
   __$$AuthEntityImplCopyWithImpl(
-      _$AuthEntityImpl _value, $Res Function(_$AuthEntityImpl) _then)
-      : super(_value, _then);
+    _$AuthEntityImpl _value,
+    $Res Function(_$AuthEntityImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Auth
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? email = null,
-    Object? password = null,
-  }) {
-    return _then(_$AuthEntityImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? email = null, Object? password = null}) {
+    return _then(
+      _$AuthEntityImpl(
+        email: null == email
+            ? _value.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String,
+        password: null == password
+            ? _value.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -161,11 +166,13 @@ class _$AuthEntityImpl implements AuthEntity {
                 other.password == password));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Auth
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AuthEntityImplCopyWith<_$AuthEntityImpl> get copyWith =>
@@ -229,16 +236,15 @@ class _$AuthEntityImpl implements AuthEntity {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AuthEntityImplToJson(
-      this,
-    );
+    return _$$AuthEntityImplToJson(this);
   }
 }
 
 abstract class AuthEntity implements Auth {
-  factory AuthEntity(
-      {required final String email,
-      required final String password}) = _$AuthEntityImpl;
+  factory AuthEntity({
+    required final String email,
+    required final String password,
+  }) = _$AuthEntityImpl;
 
   factory AuthEntity.fromJson(Map<String, dynamic> json) =
       _$AuthEntityImpl.fromJson;
@@ -247,8 +253,11 @@ abstract class AuthEntity implements Auth {
   String get email;
   @override
   String get password;
+
+  /// Create a copy of Auth
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AuthEntityImplCopyWith<_$AuthEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

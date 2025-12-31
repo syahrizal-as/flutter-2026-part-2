@@ -12,7 +12,8 @@ part of 'leave.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 Leave _$LeaveFromJson(Map<String, dynamic> json) {
   return LeaveParamEntity.fromJson(json);
@@ -27,44 +28,52 @@ mixin _$Leave {
   String get reason => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'start_date') String startDate,
-            @JsonKey(name: 'end_date') String endDate, String reason)
-        paramEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+    required TResult Function(
+      @JsonKey(name: 'start_date') String startDate,
+      @JsonKey(name: 'end_date') String endDate,
+      String reason,
+    )
+    paramEntity,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'start_date') String startDate,
-            @JsonKey(name: 'end_date') String endDate, String reason)?
-        paramEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+    TResult? Function(
+      @JsonKey(name: 'start_date') String startDate,
+      @JsonKey(name: 'end_date') String endDate,
+      String reason,
+    )?
+    paramEntity,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'start_date') String startDate,
-            @JsonKey(name: 'end_date') String endDate, String reason)?
-        paramEntity,
+    TResult Function(
+      @JsonKey(name: 'start_date') String startDate,
+      @JsonKey(name: 'end_date') String endDate,
+      String reason,
+    )?
+    paramEntity,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LeaveParamEntity value) paramEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LeaveParamEntity value)? paramEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LeaveParamEntity value)? paramEntity,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Leave to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Leave
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LeaveCopyWith<Leave> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -73,10 +82,11 @@ abstract class $LeaveCopyWith<$Res> {
   factory $LeaveCopyWith(Leave value, $Res Function(Leave) then) =
       _$LeaveCopyWithImpl<$Res, Leave>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'start_date') String startDate,
-      @JsonKey(name: 'end_date') String endDate,
-      String reason});
+  $Res call({
+    @JsonKey(name: 'start_date') String startDate,
+    @JsonKey(name: 'end_date') String endDate,
+    String reason,
+  });
 }
 
 /// @nodoc
@@ -89,6 +99,8 @@ class _$LeaveCopyWithImpl<$Res, $Val extends Leave>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Leave
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -96,45 +108,53 @@ class _$LeaveCopyWithImpl<$Res, $Val extends Leave>
     Object? endDate = null,
     Object? reason = null,
   }) {
-    return _then(_value.copyWith(
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            startDate: null == startDate
+                ? _value.startDate
+                : startDate // ignore: cast_nullable_to_non_nullable
+                      as String,
+            endDate: null == endDate
+                ? _value.endDate
+                : endDate // ignore: cast_nullable_to_non_nullable
+                      as String,
+            reason: null == reason
+                ? _value.reason
+                : reason // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$LeaveParamEntityImplCopyWith<$Res>
     implements $LeaveCopyWith<$Res> {
-  factory _$$LeaveParamEntityImplCopyWith(_$LeaveParamEntityImpl value,
-          $Res Function(_$LeaveParamEntityImpl) then) =
-      __$$LeaveParamEntityImplCopyWithImpl<$Res>;
+  factory _$$LeaveParamEntityImplCopyWith(
+    _$LeaveParamEntityImpl value,
+    $Res Function(_$LeaveParamEntityImpl) then,
+  ) = __$$LeaveParamEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'start_date') String startDate,
-      @JsonKey(name: 'end_date') String endDate,
-      String reason});
+  $Res call({
+    @JsonKey(name: 'start_date') String startDate,
+    @JsonKey(name: 'end_date') String endDate,
+    String reason,
+  });
 }
 
 /// @nodoc
 class __$$LeaveParamEntityImplCopyWithImpl<$Res>
     extends _$LeaveCopyWithImpl<$Res, _$LeaveParamEntityImpl>
     implements _$$LeaveParamEntityImplCopyWith<$Res> {
-  __$$LeaveParamEntityImplCopyWithImpl(_$LeaveParamEntityImpl _value,
-      $Res Function(_$LeaveParamEntityImpl) _then)
-      : super(_value, _then);
+  __$$LeaveParamEntityImplCopyWithImpl(
+    _$LeaveParamEntityImpl _value,
+    $Res Function(_$LeaveParamEntityImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Leave
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,30 +162,33 @@ class __$$LeaveParamEntityImplCopyWithImpl<$Res>
     Object? endDate = null,
     Object? reason = null,
   }) {
-    return _then(_$LeaveParamEntityImpl(
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$LeaveParamEntityImpl(
+        startDate: null == startDate
+            ? _value.startDate
+            : startDate // ignore: cast_nullable_to_non_nullable
+                  as String,
+        endDate: null == endDate
+            ? _value.endDate
+            : endDate // ignore: cast_nullable_to_non_nullable
+                  as String,
+        reason: null == reason
+            ? _value.reason
+            : reason // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$LeaveParamEntityImpl implements LeaveParamEntity {
-  const _$LeaveParamEntityImpl(
-      {@JsonKey(name: 'start_date') required this.startDate,
-      @JsonKey(name: 'end_date') required this.endDate,
-      required this.reason});
+  const _$LeaveParamEntityImpl({
+    @JsonKey(name: 'start_date') required this.startDate,
+    @JsonKey(name: 'end_date') required this.endDate,
+    required this.reason,
+  });
 
   factory _$LeaveParamEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$LeaveParamEntityImplFromJson(json);
@@ -195,23 +218,30 @@ class _$LeaveParamEntityImpl implements LeaveParamEntity {
             (identical(other.reason, reason) || other.reason == reason));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, startDate, endDate, reason);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Leave
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LeaveParamEntityImplCopyWith<_$LeaveParamEntityImpl> get copyWith =>
       __$$LeaveParamEntityImplCopyWithImpl<_$LeaveParamEntityImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'start_date') String startDate,
-            @JsonKey(name: 'end_date') String endDate, String reason)
-        paramEntity,
+    required TResult Function(
+      @JsonKey(name: 'start_date') String startDate,
+      @JsonKey(name: 'end_date') String endDate,
+      String reason,
+    )
+    paramEntity,
   }) {
     return paramEntity(startDate, endDate, reason);
   }
@@ -219,9 +249,12 @@ class _$LeaveParamEntityImpl implements LeaveParamEntity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'start_date') String startDate,
-            @JsonKey(name: 'end_date') String endDate, String reason)?
-        paramEntity,
+    TResult? Function(
+      @JsonKey(name: 'start_date') String startDate,
+      @JsonKey(name: 'end_date') String endDate,
+      String reason,
+    )?
+    paramEntity,
   }) {
     return paramEntity?.call(startDate, endDate, reason);
   }
@@ -229,9 +262,12 @@ class _$LeaveParamEntityImpl implements LeaveParamEntity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'start_date') String startDate,
-            @JsonKey(name: 'end_date') String endDate, String reason)?
-        paramEntity,
+    TResult Function(
+      @JsonKey(name: 'start_date') String startDate,
+      @JsonKey(name: 'end_date') String endDate,
+      String reason,
+    )?
+    paramEntity,
     required TResult orElse(),
   }) {
     if (paramEntity != null) {
@@ -270,17 +306,16 @@ class _$LeaveParamEntityImpl implements LeaveParamEntity {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LeaveParamEntityImplToJson(
-      this,
-    );
+    return _$$LeaveParamEntityImplToJson(this);
   }
 }
 
 abstract class LeaveParamEntity implements Leave {
-  const factory LeaveParamEntity(
-      {@JsonKey(name: 'start_date') required final String startDate,
-      @JsonKey(name: 'end_date') required final String endDate,
-      required final String reason}) = _$LeaveParamEntityImpl;
+  const factory LeaveParamEntity({
+    @JsonKey(name: 'start_date') required final String startDate,
+    @JsonKey(name: 'end_date') required final String endDate,
+    required final String reason,
+  }) = _$LeaveParamEntityImpl;
 
   factory LeaveParamEntity.fromJson(Map<String, dynamic> json) =
       _$LeaveParamEntityImpl.fromJson;
@@ -293,8 +328,11 @@ abstract class LeaveParamEntity implements Leave {
   String get endDate;
   @override
   String get reason;
+
+  /// Create a copy of Leave
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LeaveParamEntityImplCopyWith<_$LeaveParamEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

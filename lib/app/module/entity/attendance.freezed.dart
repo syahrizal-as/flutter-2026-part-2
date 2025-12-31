@@ -12,7 +12,8 @@ part of 'attendance.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 Attendance _$AttendanceFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -24,8 +25,12 @@ Attendance _$AttendanceFromJson(Map<String, dynamic> json) {
       return AttendanceParamGetEntity.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'Attendance',
-          'Invalid union type "${json['runtimeType']}"!');
+      throw CheckedFromJsonException(
+        json,
+        'runtimeType',
+        'Attendance',
+        'Invalid union type "${json['runtimeType']}"!',
+      );
   }
 }
 
@@ -33,62 +38,68 @@ Attendance _$AttendanceFromJson(Map<String, dynamic> json) {
 mixin _$Attendance {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)
-        entity,
+    required TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )
+    entity,
     required TResult Function(double latitude, double longitude) paramEntity,
     required TResult Function(int month, int year) paramGetEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult? Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult? Function(double latitude, double longitude)? paramEntity,
     TResult? Function(int month, int year)? paramGetEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult Function(double latitude, double longitude)? paramEntity,
     TResult Function(int month, int year)? paramGetEntity,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AttendanceEntity value) entity,
     required TResult Function(AttendanceParamEntity value) paramEntity,
     required TResult Function(AttendanceParamGetEntity value) paramGetEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AttendanceEntity value)? entity,
     TResult? Function(AttendanceParamEntity value)? paramEntity,
     TResult? Function(AttendanceParamGetEntity value)? paramGetEntity,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AttendanceEntity value)? entity,
     TResult Function(AttendanceParamEntity value)? paramEntity,
     TResult Function(AttendanceParamGetEntity value)? paramGetEntity,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Attendance to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AttendanceCopyWith<$Res> {
   factory $AttendanceCopyWith(
-          Attendance value, $Res Function(Attendance) then) =
-      _$AttendanceCopyWithImpl<$Res, Attendance>;
+    Attendance value,
+    $Res Function(Attendance) then,
+  ) = _$AttendanceCopyWithImpl<$Res, Attendance>;
 }
 
 /// @nodoc
@@ -100,28 +111,36 @@ class _$AttendanceCopyWithImpl<$Res, $Val extends Attendance>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$AttendanceEntityImplCopyWith<$Res> {
-  factory _$$AttendanceEntityImplCopyWith(_$AttendanceEntityImpl value,
-          $Res Function(_$AttendanceEntityImpl) then) =
-      __$$AttendanceEntityImplCopyWithImpl<$Res>;
+  factory _$$AttendanceEntityImplCopyWith(
+    _$AttendanceEntityImpl value,
+    $Res Function(_$AttendanceEntityImpl) then,
+  ) = __$$AttendanceEntityImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'start_time') String startTime,
-      @JsonKey(name: 'end_time') String endTime,
-      String? date});
+  $Res call({
+    @JsonKey(name: 'start_time') String startTime,
+    @JsonKey(name: 'end_time') String endTime,
+    String? date,
+  });
 }
 
 /// @nodoc
 class __$$AttendanceEntityImplCopyWithImpl<$Res>
     extends _$AttendanceCopyWithImpl<$Res, _$AttendanceEntityImpl>
     implements _$$AttendanceEntityImplCopyWith<$Res> {
-  __$$AttendanceEntityImplCopyWithImpl(_$AttendanceEntityImpl _value,
-      $Res Function(_$AttendanceEntityImpl) _then)
-      : super(_value, _then);
+  __$$AttendanceEntityImplCopyWithImpl(
+    _$AttendanceEntityImpl _value,
+    $Res Function(_$AttendanceEntityImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -129,32 +148,34 @@ class __$$AttendanceEntityImplCopyWithImpl<$Res>
     Object? endTime = null,
     Object? date = freezed,
   }) {
-    return _then(_$AttendanceEntityImpl(
-      startTime: null == startTime
-          ? _value.startTime
-          : startTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      endTime: null == endTime
-          ? _value.endTime
-          : endTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$AttendanceEntityImpl(
+        startTime: null == startTime
+            ? _value.startTime
+            : startTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        endTime: null == endTime
+            ? _value.endTime
+            : endTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        date: freezed == date
+            ? _value.date
+            : date // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AttendanceEntityImpl implements AttendanceEntity {
-  _$AttendanceEntityImpl(
-      {@JsonKey(name: 'start_time') required this.startTime,
-      @JsonKey(name: 'end_time') required this.endTime,
-      this.date,
-      final String? $type})
-      : $type = $type ?? 'entity';
+  _$AttendanceEntityImpl({
+    @JsonKey(name: 'start_time') required this.startTime,
+    @JsonKey(name: 'end_time') required this.endTime,
+    this.date,
+    final String? $type,
+  }) : $type = $type ?? 'entity';
 
   factory _$AttendanceEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttendanceEntityImplFromJson(json);
@@ -187,23 +208,30 @@ class _$AttendanceEntityImpl implements AttendanceEntity {
             (identical(other.date, date) || other.date == date));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, startTime, endTime, date);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AttendanceEntityImplCopyWith<_$AttendanceEntityImpl> get copyWith =>
       __$$AttendanceEntityImplCopyWithImpl<_$AttendanceEntityImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)
-        entity,
+    required TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )
+    entity,
     required TResult Function(double latitude, double longitude) paramEntity,
     required TResult Function(int month, int year) paramGetEntity,
   }) {
@@ -213,9 +241,12 @@ class _$AttendanceEntityImpl implements AttendanceEntity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult? Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult? Function(double latitude, double longitude)? paramEntity,
     TResult? Function(int month, int year)? paramGetEntity,
   }) {
@@ -225,9 +256,12 @@ class _$AttendanceEntityImpl implements AttendanceEntity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult Function(double latitude, double longitude)? paramEntity,
     TResult Function(int month, int year)? paramGetEntity,
     required TResult orElse(),
@@ -274,17 +308,16 @@ class _$AttendanceEntityImpl implements AttendanceEntity {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AttendanceEntityImplToJson(
-      this,
-    );
+    return _$$AttendanceEntityImplToJson(this);
   }
 }
 
 abstract class AttendanceEntity implements Attendance {
-  factory AttendanceEntity(
-      {@JsonKey(name: 'start_time') required final String startTime,
-      @JsonKey(name: 'end_time') required final String endTime,
-      final String? date}) = _$AttendanceEntityImpl;
+  factory AttendanceEntity({
+    @JsonKey(name: 'start_time') required final String startTime,
+    @JsonKey(name: 'end_time') required final String endTime,
+    final String? date,
+  }) = _$AttendanceEntityImpl;
 
   factory AttendanceEntity.fromJson(Map<String, dynamic> json) =
       _$AttendanceEntityImpl.fromJson;
@@ -294,7 +327,10 @@ abstract class AttendanceEntity implements Attendance {
   @JsonKey(name: 'end_time')
   String get endTime;
   String? get date;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AttendanceEntityImplCopyWith<_$AttendanceEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -302,9 +338,9 @@ abstract class AttendanceEntity implements Attendance {
 /// @nodoc
 abstract class _$$AttendanceParamEntityImplCopyWith<$Res> {
   factory _$$AttendanceParamEntityImplCopyWith(
-          _$AttendanceParamEntityImpl value,
-          $Res Function(_$AttendanceParamEntityImpl) then) =
-      __$$AttendanceParamEntityImplCopyWithImpl<$Res>;
+    _$AttendanceParamEntityImpl value,
+    $Res Function(_$AttendanceParamEntityImpl) then,
+  ) = __$$AttendanceParamEntityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double latitude, double longitude});
 }
@@ -313,35 +349,39 @@ abstract class _$$AttendanceParamEntityImplCopyWith<$Res> {
 class __$$AttendanceParamEntityImplCopyWithImpl<$Res>
     extends _$AttendanceCopyWithImpl<$Res, _$AttendanceParamEntityImpl>
     implements _$$AttendanceParamEntityImplCopyWith<$Res> {
-  __$$AttendanceParamEntityImplCopyWithImpl(_$AttendanceParamEntityImpl _value,
-      $Res Function(_$AttendanceParamEntityImpl) _then)
-      : super(_value, _then);
+  __$$AttendanceParamEntityImplCopyWithImpl(
+    _$AttendanceParamEntityImpl _value,
+    $Res Function(_$AttendanceParamEntityImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-  }) {
-    return _then(_$AttendanceParamEntityImpl(
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
+  $Res call({Object? latitude = null, Object? longitude = null}) {
+    return _then(
+      _$AttendanceParamEntityImpl(
+        latitude: null == latitude
+            ? _value.latitude
+            : latitude // ignore: cast_nullable_to_non_nullable
+                  as double,
+        longitude: null == longitude
+            ? _value.longitude
+            : longitude // ignore: cast_nullable_to_non_nullable
+                  as double,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AttendanceParamEntityImpl implements AttendanceParamEntity {
-  _$AttendanceParamEntityImpl(
-      {required this.latitude, required this.longitude, final String? $type})
-      : $type = $type ?? 'paramEntity';
+  _$AttendanceParamEntityImpl({
+    required this.latitude,
+    required this.longitude,
+    final String? $type,
+  }) : $type = $type ?? 'paramEntity';
 
   factory _$AttendanceParamEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttendanceParamEntityImplFromJson(json);
@@ -370,23 +410,31 @@ class _$AttendanceParamEntityImpl implements AttendanceParamEntity {
                 other.longitude == longitude));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AttendanceParamEntityImplCopyWith<_$AttendanceParamEntityImpl>
-      get copyWith => __$$AttendanceParamEntityImplCopyWithImpl<
-          _$AttendanceParamEntityImpl>(this, _$identity);
+  get copyWith =>
+      __$$AttendanceParamEntityImplCopyWithImpl<_$AttendanceParamEntityImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)
-        entity,
+    required TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )
+    entity,
     required TResult Function(double latitude, double longitude) paramEntity,
     required TResult Function(int month, int year) paramGetEntity,
   }) {
@@ -396,9 +444,12 @@ class _$AttendanceParamEntityImpl implements AttendanceParamEntity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult? Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult? Function(double latitude, double longitude)? paramEntity,
     TResult? Function(int month, int year)? paramGetEntity,
   }) {
@@ -408,9 +459,12 @@ class _$AttendanceParamEntityImpl implements AttendanceParamEntity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult Function(double latitude, double longitude)? paramEntity,
     TResult Function(int month, int year)? paramGetEntity,
     required TResult orElse(),
@@ -457,33 +511,35 @@ class _$AttendanceParamEntityImpl implements AttendanceParamEntity {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AttendanceParamEntityImplToJson(
-      this,
-    );
+    return _$$AttendanceParamEntityImplToJson(this);
   }
 }
 
 abstract class AttendanceParamEntity implements Attendance {
-  factory AttendanceParamEntity(
-      {required final double latitude,
-      required final double longitude}) = _$AttendanceParamEntityImpl;
+  factory AttendanceParamEntity({
+    required final double latitude,
+    required final double longitude,
+  }) = _$AttendanceParamEntityImpl;
 
   factory AttendanceParamEntity.fromJson(Map<String, dynamic> json) =
       _$AttendanceParamEntityImpl.fromJson;
 
   double get latitude;
   double get longitude;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AttendanceParamEntityImplCopyWith<_$AttendanceParamEntityImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AttendanceParamGetEntityImplCopyWith<$Res> {
   factory _$$AttendanceParamGetEntityImplCopyWith(
-          _$AttendanceParamGetEntityImpl value,
-          $Res Function(_$AttendanceParamGetEntityImpl) then) =
-      __$$AttendanceParamGetEntityImplCopyWithImpl<$Res>;
+    _$AttendanceParamGetEntityImpl value,
+    $Res Function(_$AttendanceParamGetEntityImpl) then,
+  ) = __$$AttendanceParamGetEntityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int month, int year});
 }
@@ -493,35 +549,38 @@ class __$$AttendanceParamGetEntityImplCopyWithImpl<$Res>
     extends _$AttendanceCopyWithImpl<$Res, _$AttendanceParamGetEntityImpl>
     implements _$$AttendanceParamGetEntityImplCopyWith<$Res> {
   __$$AttendanceParamGetEntityImplCopyWithImpl(
-      _$AttendanceParamGetEntityImpl _value,
-      $Res Function(_$AttendanceParamGetEntityImpl) _then)
-      : super(_value, _then);
+    _$AttendanceParamGetEntityImpl _value,
+    $Res Function(_$AttendanceParamGetEntityImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? month = null,
-    Object? year = null,
-  }) {
-    return _then(_$AttendanceParamGetEntityImpl(
-      month: null == month
-          ? _value.month
-          : month // ignore: cast_nullable_to_non_nullable
-              as int,
-      year: null == year
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? month = null, Object? year = null}) {
+    return _then(
+      _$AttendanceParamGetEntityImpl(
+        month: null == month
+            ? _value.month
+            : month // ignore: cast_nullable_to_non_nullable
+                  as int,
+        year: null == year
+            ? _value.year
+            : year // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AttendanceParamGetEntityImpl implements AttendanceParamGetEntity {
-  _$AttendanceParamGetEntityImpl(
-      {required this.month, required this.year, final String? $type})
-      : $type = $type ?? 'paramGetEntity';
+  _$AttendanceParamGetEntityImpl({
+    required this.month,
+    required this.year,
+    final String? $type,
+  }) : $type = $type ?? 'paramGetEntity';
 
   factory _$AttendanceParamGetEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttendanceParamGetEntityImplFromJson(json);
@@ -548,23 +607,30 @@ class _$AttendanceParamGetEntityImpl implements AttendanceParamGetEntity {
             (identical(other.year, year) || other.year == year));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, month, year);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AttendanceParamGetEntityImplCopyWith<_$AttendanceParamGetEntityImpl>
-      get copyWith => __$$AttendanceParamGetEntityImplCopyWithImpl<
-          _$AttendanceParamGetEntityImpl>(this, _$identity);
+  get copyWith =>
+      __$$AttendanceParamGetEntityImplCopyWithImpl<
+        _$AttendanceParamGetEntityImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)
-        entity,
+    required TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )
+    entity,
     required TResult Function(double latitude, double longitude) paramEntity,
     required TResult Function(int month, int year) paramGetEntity,
   }) {
@@ -574,9 +640,12 @@ class _$AttendanceParamGetEntityImpl implements AttendanceParamGetEntity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult? Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult? Function(double latitude, double longitude)? paramEntity,
     TResult? Function(int month, int year)? paramGetEntity,
   }) {
@@ -586,9 +655,12 @@ class _$AttendanceParamGetEntityImpl implements AttendanceParamGetEntity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'start_time') String startTime,
-            @JsonKey(name: 'end_time') String endTime, String? date)?
-        entity,
+    TResult Function(
+      @JsonKey(name: 'start_time') String startTime,
+      @JsonKey(name: 'end_time') String endTime,
+      String? date,
+    )?
+    entity,
     TResult Function(double latitude, double longitude)? paramEntity,
     TResult Function(int month, int year)? paramGetEntity,
     required TResult orElse(),
@@ -635,23 +707,25 @@ class _$AttendanceParamGetEntityImpl implements AttendanceParamGetEntity {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AttendanceParamGetEntityImplToJson(
-      this,
-    );
+    return _$$AttendanceParamGetEntityImplToJson(this);
   }
 }
 
 abstract class AttendanceParamGetEntity implements Attendance {
-  factory AttendanceParamGetEntity(
-      {required final int month,
-      required final int year}) = _$AttendanceParamGetEntityImpl;
+  factory AttendanceParamGetEntity({
+    required final int month,
+    required final int year,
+  }) = _$AttendanceParamGetEntityImpl;
 
   factory AttendanceParamGetEntity.fromJson(Map<String, dynamic> json) =
       _$AttendanceParamGetEntityImpl.fromJson;
 
   int get month;
   int get year;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Attendance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AttendanceParamGetEntityImplCopyWith<_$AttendanceParamGetEntityImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

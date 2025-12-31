@@ -14,12 +14,12 @@ _$ScheduleEntityImpl _$$ScheduleEntityImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$ScheduleEntityImplToJson(
-        _$ScheduleEntityImpl instance) =>
-    <String, dynamic>{
-      'is_wfa': instance.isWfa,
-      'office': instance.office,
-      'shift': instance.shift,
-    };
+  _$ScheduleEntityImpl instance,
+) => <String, dynamic>{
+  'is_wfa': instance.isWfa,
+  'office': instance.office,
+  'shift': instance.shift,
+};
 
 _$OfficeEntityImpl _$$OfficeEntityImplFromJson(Map<String, dynamic> json) =>
     _$OfficeEntityImpl(
