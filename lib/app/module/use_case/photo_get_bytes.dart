@@ -12,6 +12,9 @@ class PhotoGetBytesUseCase
   Future<DataState> call({void param}) async {
     final response = await _photoRepository.get();
     if (response.success) {
+      if (response.data == null) {
+        return ErrorState(message: 'Foto referensi tidak ditemukan. Silakan upload foto di profil.');
+      }
       final responseBytes = await _photoRepository.getBytes(response.data!);
       return responseBytes;
     } else {

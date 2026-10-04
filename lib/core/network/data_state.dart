@@ -11,9 +11,9 @@ class DataState<T> extends BaseResponse {
 
   factory DataState.fromJson(Map<String, dynamic> json) {
     return DataState(
-        success: json['success'],
+        success: json['success'] ?? false,
         message: json['message'] ?? '',
-        data: json['data']);
+        data: json.containsKey('data') ? json['data'] : json);
   }
 }
 

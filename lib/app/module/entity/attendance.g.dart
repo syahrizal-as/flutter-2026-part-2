@@ -12,6 +12,7 @@ _$AttendanceEntityImpl _$$AttendanceEntityImplFromJson(
   startTime: json['start_time'] as String,
   endTime: json['end_time'] as String,
   date: json['date'] as String?,
+  note: json['note'] as String?,
   $type: json['runtimeType'] as String?,
 );
 
@@ -21,6 +22,7 @@ Map<String, dynamic> _$$AttendanceEntityImplToJson(
   'start_time': instance.startTime,
   'end_time': instance.endTime,
   'date': instance.date,
+  'note': instance.note,
   'runtimeType': instance.$type,
 };
 

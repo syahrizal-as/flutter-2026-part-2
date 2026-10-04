@@ -22,13 +22,13 @@ Schedule _$ScheduleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Schedule {
   @JsonKey(name: 'is_wfa')
-  bool get isWfa => throw _privateConstructorUsedError;
+  int get isWfa => throw _privateConstructorUsedError;
   OfficeEntity get office => throw _privateConstructorUsedError;
   ShiftEntity get shift => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-      @JsonKey(name: 'is_wfa') bool isWfa,
+      @JsonKey(name: 'is_wfa') int isWfa,
       OfficeEntity office,
       ShiftEntity shift,
     )
@@ -37,7 +37,7 @@ mixin _$Schedule {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-      @JsonKey(name: 'is_wfa') bool isWfa,
+      @JsonKey(name: 'is_wfa') int isWfa,
       OfficeEntity office,
       ShiftEntity shift,
     )?
@@ -46,7 +46,7 @@ mixin _$Schedule {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-      @JsonKey(name: 'is_wfa') bool isWfa,
+      @JsonKey(name: 'is_wfa') int isWfa,
       OfficeEntity office,
       ShiftEntity shift,
     )?
@@ -83,7 +83,7 @@ abstract class $ScheduleCopyWith<$Res> {
       _$ScheduleCopyWithImpl<$Res, Schedule>;
   @useResult
   $Res call({
-    @JsonKey(name: 'is_wfa') bool isWfa,
+    @JsonKey(name: 'is_wfa') int isWfa,
     OfficeEntity office,
     ShiftEntity shift,
   });
@@ -113,7 +113,7 @@ class _$ScheduleCopyWithImpl<$Res, $Val extends Schedule>
             isWfa: null == isWfa
                 ? _value.isWfa
                 : isWfa // ignore: cast_nullable_to_non_nullable
-                      as bool,
+                      as int,
             office: freezed == office
                 ? _value.office
                 : office // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ abstract class _$$ScheduleEntityImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @JsonKey(name: 'is_wfa') bool isWfa,
+    @JsonKey(name: 'is_wfa') int isWfa,
     OfficeEntity office,
     ShiftEntity shift,
   });
@@ -167,7 +167,7 @@ class __$$ScheduleEntityImplCopyWithImpl<$Res>
         isWfa: null == isWfa
             ? _value.isWfa
             : isWfa // ignore: cast_nullable_to_non_nullable
-                  as bool,
+                  as int,
         office: freezed == office
             ? _value.office
             : office // ignore: cast_nullable_to_non_nullable
@@ -195,7 +195,7 @@ class _$ScheduleEntityImpl implements ScheduleEntity {
 
   @override
   @JsonKey(name: 'is_wfa')
-  final bool isWfa;
+  final int isWfa;
   @override
   final OfficeEntity office;
   @override
@@ -240,7 +240,7 @@ class _$ScheduleEntityImpl implements ScheduleEntity {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-      @JsonKey(name: 'is_wfa') bool isWfa,
+      @JsonKey(name: 'is_wfa') int isWfa,
       OfficeEntity office,
       ShiftEntity shift,
     )
@@ -253,7 +253,7 @@ class _$ScheduleEntityImpl implements ScheduleEntity {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-      @JsonKey(name: 'is_wfa') bool isWfa,
+      @JsonKey(name: 'is_wfa') int isWfa,
       OfficeEntity office,
       ShiftEntity shift,
     )?
@@ -266,7 +266,7 @@ class _$ScheduleEntityImpl implements ScheduleEntity {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-      @JsonKey(name: 'is_wfa') bool isWfa,
+      @JsonKey(name: 'is_wfa') int isWfa,
       OfficeEntity office,
       ShiftEntity shift,
     )?
@@ -315,7 +315,7 @@ class _$ScheduleEntityImpl implements ScheduleEntity {
 
 abstract class ScheduleEntity implements Schedule {
   factory ScheduleEntity({
-    @JsonKey(name: 'is_wfa') required final bool isWfa,
+    @JsonKey(name: 'is_wfa') required final int isWfa,
     required final OfficeEntity office,
     required final ShiftEntity shift,
   }) = _$ScheduleEntityImpl;
@@ -325,7 +325,7 @@ abstract class ScheduleEntity implements Schedule {
 
   @override
   @JsonKey(name: 'is_wfa')
-  bool get isWfa;
+  int get isWfa;
   @override
   OfficeEntity get office;
   @override
@@ -345,37 +345,41 @@ Office _$OfficeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Office {
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
-  double get radius => throw _privateConstructorUsedError;
+  num get latitude => throw _privateConstructorUsedError;
+  num get longitude => throw _privateConstructorUsedError;
+  num get radius => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
+      int id,
       String name,
-      double latitude,
-      double longitude,
-      double radius,
+      num latitude,
+      num longitude,
+      num radius,
     )
     entity,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
+      int id,
       String name,
-      double latitude,
-      double longitude,
-      double radius,
+      num latitude,
+      num longitude,
+      num radius,
     )?
     entity,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
+      int id,
       String name,
-      double latitude,
-      double longitude,
-      double radius,
+      num latitude,
+      num longitude,
+      num radius,
     )?
     entity,
     required TResult orElse(),
@@ -408,7 +412,7 @@ abstract class $OfficeCopyWith<$Res> {
   factory $OfficeCopyWith(Office value, $Res Function(Office) then) =
       _$OfficeCopyWithImpl<$Res, Office>;
   @useResult
-  $Res call({String name, double latitude, double longitude, double radius});
+  $Res call({int id, String name, num latitude, num longitude, num radius});
 }
 
 /// @nodoc
@@ -426,6 +430,7 @@ class _$OfficeCopyWithImpl<$Res, $Val extends Office>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
     Object? latitude = null,
     Object? longitude = null,
@@ -433,6 +438,10 @@ class _$OfficeCopyWithImpl<$Res, $Val extends Office>
   }) {
     return _then(
       _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
             name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
@@ -440,15 +449,15 @@ class _$OfficeCopyWithImpl<$Res, $Val extends Office>
             latitude: null == latitude
                 ? _value.latitude
                 : latitude // ignore: cast_nullable_to_non_nullable
-                      as double,
+                      as num,
             longitude: null == longitude
                 ? _value.longitude
                 : longitude // ignore: cast_nullable_to_non_nullable
-                      as double,
+                      as num,
             radius: null == radius
                 ? _value.radius
                 : radius // ignore: cast_nullable_to_non_nullable
-                      as double,
+                      as num,
           )
           as $Val,
     );
@@ -464,7 +473,7 @@ abstract class _$$OfficeEntityImplCopyWith<$Res>
   ) = __$$OfficeEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, double latitude, double longitude, double radius});
+  $Res call({int id, String name, num latitude, num longitude, num radius});
 }
 
 /// @nodoc
@@ -481,6 +490,7 @@ class __$$OfficeEntityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
     Object? latitude = null,
     Object? longitude = null,
@@ -488,6 +498,10 @@ class __$$OfficeEntityImplCopyWithImpl<$Res>
   }) {
     return _then(
       _$OfficeEntityImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
         name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
@@ -495,15 +509,15 @@ class __$$OfficeEntityImplCopyWithImpl<$Res>
         latitude: null == latitude
             ? _value.latitude
             : latitude // ignore: cast_nullable_to_non_nullable
-                  as double,
+                  as num,
         longitude: null == longitude
             ? _value.longitude
             : longitude // ignore: cast_nullable_to_non_nullable
-                  as double,
+                  as num,
         radius: null == radius
             ? _value.radius
             : radius // ignore: cast_nullable_to_non_nullable
-                  as double,
+                  as num,
       ),
     );
   }
@@ -513,6 +527,7 @@ class __$$OfficeEntityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OfficeEntityImpl implements OfficeEntity {
   _$OfficeEntityImpl({
+    required this.id,
     required this.name,
     required this.latitude,
     required this.longitude,
@@ -523,17 +538,19 @@ class _$OfficeEntityImpl implements OfficeEntity {
       _$$OfficeEntityImplFromJson(json);
 
   @override
+  final int id;
+  @override
   final String name;
   @override
-  final double latitude;
+  final num latitude;
   @override
-  final double longitude;
+  final num longitude;
   @override
-  final double radius;
+  final num radius;
 
   @override
   String toString() {
-    return 'Office.entity(name: $name, latitude: $latitude, longitude: $longitude, radius: $radius)';
+    return 'Office.entity(id: $id, name: $name, latitude: $latitude, longitude: $longitude, radius: $radius)';
   }
 
   @override
@@ -541,6 +558,7 @@ class _$OfficeEntityImpl implements OfficeEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OfficeEntityImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
@@ -552,7 +570,7 @@ class _$OfficeEntityImpl implements OfficeEntity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, latitude, longitude, radius);
+      Object.hash(runtimeType, id, name, latitude, longitude, radius);
 
   /// Create a copy of Office
   /// with the given fields replaced by the non-null parameter values.
@@ -566,44 +584,47 @@ class _$OfficeEntityImpl implements OfficeEntity {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
+      int id,
       String name,
-      double latitude,
-      double longitude,
-      double radius,
+      num latitude,
+      num longitude,
+      num radius,
     )
     entity,
   }) {
-    return entity(name, latitude, longitude, radius);
+    return entity(id, name, latitude, longitude, radius);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
+      int id,
       String name,
-      double latitude,
-      double longitude,
-      double radius,
+      num latitude,
+      num longitude,
+      num radius,
     )?
     entity,
   }) {
-    return entity?.call(name, latitude, longitude, radius);
+    return entity?.call(id, name, latitude, longitude, radius);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
+      int id,
       String name,
-      double latitude,
-      double longitude,
-      double radius,
+      num latitude,
+      num longitude,
+      num radius,
     )?
     entity,
     required TResult orElse(),
   }) {
     if (entity != null) {
-      return entity(name, latitude, longitude, radius);
+      return entity(id, name, latitude, longitude, radius);
     }
     return orElse();
   }
@@ -644,23 +665,26 @@ class _$OfficeEntityImpl implements OfficeEntity {
 
 abstract class OfficeEntity implements Office {
   factory OfficeEntity({
+    required final int id,
     required final String name,
-    required final double latitude,
-    required final double longitude,
-    required final double radius,
+    required final num latitude,
+    required final num longitude,
+    required final num radius,
   }) = _$OfficeEntityImpl;
 
   factory OfficeEntity.fromJson(Map<String, dynamic> json) =
       _$OfficeEntityImpl.fromJson;
 
   @override
+  int get id;
+  @override
   String get name;
   @override
-  double get latitude;
+  num get latitude;
   @override
-  double get longitude;
+  num get longitude;
   @override
-  double get radius;
+  num get radius;
 
   /// Create a copy of Office
   /// with the given fields replaced by the non-null parameter values.

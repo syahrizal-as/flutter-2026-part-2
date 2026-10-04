@@ -3,4 +3,5 @@ import 'package:absensi_2026/core/network/data_state.dart';
 
 abstract class AuthRepository {
   Future<DataState> login(AuthEntity param);
+  Future<void> logout();
 }

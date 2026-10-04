@@ -25,4 +25,9 @@ class SharedPreferencesHelper {
     final pref = await SharedPreferences.getInstance();
     return pref.clear();
   }
+
+  static remove(String key) async {
+    final pref = await SharedPreferences.getInstance();
+    return pref.remove(key);
+  }
 }

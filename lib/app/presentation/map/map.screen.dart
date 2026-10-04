@@ -16,7 +16,15 @@ class MapScreen extends AppWidget<MapNotifier, void, void> {
   }
 
   @override
+  void checkVariableAfterUi(BuildContext context) {
+    if (notifier.isSuccess) {
+      Navigator.pop(context, true);
+    }
+  }
+
+  @override
   Widget bodyBuild(BuildContext context) {
+    final color = Theme.of(context).colorScheme;
     return Stack(
       children: [
         /// MAP
@@ -24,15 +32,125 @@ class MapScreen extends AppWidget<MapNotifier, void, void> {
           child: OSMFlutter(
             controller: notifier.mapController,
             osmOption: OSMOption(
-              zoomOption: ZoomOption(initZoom: 15.5, minZoomLevel: 10),
+              zoomOption: const ZoomOption(initZoom: 15.5, minZoomLevel: 10),
+              userTrackingOption: const UserTrackingOption(
+                enableTracking: true,
+                unFollowUser: false,
+              ),
+              userLocationMarker: UserLocationMaker(
+                personMarker: const MarkerIcon(
+                  icon: Icon(
+                    Icons.location_history_rounded,
+                    color: Colors.red,
+                    size: 48,
+                  ),
+                ),
+                directionArrowMarker: const MarkerIcon(
+                  icon: Icon(
+                    Icons.double_arrow,
+                    size: 48,
+                  ),
+                ),
+              ),
             ),
+            onMapIsReady: (isReady) {
+              if (isReady) {
+                notifier.mapIsReady();
+              }
+            },
             mapIsLoading: LoadingAppWidget(),
           ),
         ),
 
         /// FOOTER CARD
         Positioned(left: 0, right: 0, bottom: 0, child: _footerLayout(context)),
+
+        /// STATUS INDICATOR (Top Float)
+        Positioned(
+          top: 16,
+          left: 16,
+          right: 16,
+          child: _statusHeader(context),
+        ),
+
+        /// RECENTER BUTTON
+        Positioned(
+          bottom: 230,
+          right: 16,
+          child: FloatingActionButton(
+            onPressed: () => notifier.recenterMap(),
+            backgroundColor: color.primary,
+            foregroundColor: color.onPrimary,
+            mini: true,
+            child: const Icon(Icons.my_location_rounded),
+          ),
+        ),
       ],
+    );
+  }
+
+  Widget _statusHeader(BuildContext context) {
+    final color = Theme.of(context).colorScheme;
+    final inRadius = notifier.isEnableSubmitButton;
+    final distance = notifier.distanceFromOffice;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      decoration: BoxDecoration(
+        color: color.surface.withOpacity(0.9),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Icon(
+            inRadius ? Icons.check_circle_rounded : Icons.info_rounded,
+            color: inRadius ? Colors.green : color.error,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  notifier.currentLocation == null
+                      ? "Menunggu GPS..."
+                      : notifier.schedule == null
+                          ? "Mengambil data jadwal..."
+                          : inRadius
+                              ? "Anda berada di dalam radius"
+                              : "Anda berada di luar radius kantor",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                    color: inRadius ? Colors.green.shade800 : color.error,
+                  ),
+                ),
+                Text(
+                  notifier.currentLocation == null
+                      ? "Mencari lokasi Anda..."
+                      : notifier.schedule == null
+                          ? "Tunggu sebentar..."
+                          : inRadius
+                              ? "Silakan kirim kehadiran Anda"
+                              : "Jarak Anda: ${distance.toStringAsFixed(0)} meter lagi",
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: inRadius ? Colors.green : color.error.withOpacity(0.8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -72,15 +190,16 @@ class MapScreen extends AppWidget<MapNotifier, void, void> {
               _infoTile(
                 context,
                 icon: Icons.location_city,
-                title: "Bekasi",
-                badge: "WFA",
+                title: notifier.schedule?.office.name ?? "-",
+                badge: (notifier.schedule?.isWfa == 1) ? "WFA" : "WFO",
               ),
               const SizedBox(width: 12),
               _infoTile(
                 context,
                 icon: Icons.access_time,
-                title: "Siang",
-                subtitle: "09:00 - 17:00",
+                title: notifier.schedule?.shift.name ?? "-",
+                subtitle:
+                    "${notifier.schedule?.shift.startTime} - ${notifier.schedule?.shift.endTime}",
               ),
             ],
           ),
@@ -92,7 +211,8 @@ class MapScreen extends AppWidget<MapNotifier, void, void> {
             width: double.infinity,
             height: 48,
             child: FilledButton(
-              onPressed: null, // aktifkan kalau lokasi valid
+              onPressed:
+                  notifier.isEnableSubmitButton ? () => notifier.send() : null,
               style: FilledButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),

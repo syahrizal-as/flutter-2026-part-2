@@ -7,3 +7,5 @@ const String PREF_EMAIL = 'pref_email';
 const String PREF_START_SHIFT = 'pref-start-shift';
 const String PREF_END_SHIFT = 'pref-end-shift';
 const String PREF_NOTIF_SETTING = 'pref-notif-setting';
+const String PREF_BRANCH = 'pref-branch';
+const String PREF_IS_SECURITY_MODE = 'pref-is-security-mode';

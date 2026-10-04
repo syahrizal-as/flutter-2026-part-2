@@ -11,17 +11,32 @@ abstract class AppProvider with ChangeNotifier {
   String get errorMessage => _errorMessage;
   String get snackbarMessage => _snackbarMessage;
 
-  set errorMeesage(String param) => _errorMessage = param;
-  set snackbarMessage(String param) => _snackbarMessage = param;
+  set errorMeesage(String? param) {
+    _errorMessage = param ?? '';
+    if (!_isDispose) notifyListeners();
+  }
+
+  set snackbarMessage(String? param) {
+    _snackbarMessage = param ?? '';
+    if (!_isDispose) notifyListeners();
+  }
 
   void showLoading() {
     _isLoading = true;
-    notifyListeners();
+    if (!_isDispose) notifyListeners();
   }
 
   void hideLoading() {
     _isLoading = false;
-    notifyListeners();
+    if (!_isDispose) notifyListeners();
+  }
+
+  @override
+  @protected
+  void notifyListeners() {
+    if (!_isDispose) {
+      super.notifyListeners();
+    }
   }
 
   void init();

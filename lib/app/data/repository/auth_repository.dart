@@ -27,4 +27,9 @@ class AuthRepositoryImpl extends AuthRepository {
       return null;
     });
   }
+
+  @override
+  Future<void> logout() async {
+    await SharedPreferencesHelper.logout();
+  }
 }

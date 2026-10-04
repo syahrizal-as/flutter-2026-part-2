@@ -7,7 +7,7 @@ part 'schedule.freezed.dart';
 @freezed
 sealed class Schedule with _$Schedule {
   factory Schedule.entity(
-      {@JsonKey(name: 'is_wfa') required bool isWfa,
+      {@JsonKey(name: 'is_wfa') required int isWfa,
       required OfficeEntity office,
       required ShiftEntity shift}) = ScheduleEntity;
 
@@ -18,10 +18,11 @@ sealed class Schedule with _$Schedule {
 @freezed
 sealed class Office with _$Office {
   factory Office.entity(
-      {required String name,
-      required double latitude,
-      required double longitude,
-      required double radius}) = OfficeEntity;
+      {required int id,
+      required String name,
+      required num latitude,
+      required num longitude,
+      required num radius}) = OfficeEntity;
 
   factory Office.fromJson(Map<String, Object> json) => _$OfficeFromJson(json);
 }

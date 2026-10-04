@@ -23,17 +23,34 @@ Auth _$AuthFromJson(Map<String, dynamic> json) {
 mixin _$Auth {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  @JsonKey(name: 'device_id')
+  String? get deviceId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) entity,
+    required TResult Function(
+      String email,
+      String password,
+      @JsonKey(name: 'device_id') String? deviceId,
+    )
+    entity,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? entity,
+    TResult? Function(
+      String email,
+      String password,
+      @JsonKey(name: 'device_id') String? deviceId,
+    )?
+    entity,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? entity,
+    TResult Function(
+      String email,
+      String password,
+      @JsonKey(name: 'device_id') String? deviceId,
+    )?
+    entity,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,7 +81,11 @@ abstract class $AuthCopyWith<$Res> {
   factory $AuthCopyWith(Auth value, $Res Function(Auth) then) =
       _$AuthCopyWithImpl<$Res, Auth>;
   @useResult
-  $Res call({String email, String password});
+  $Res call({
+    String email,
+    String password,
+    @JsonKey(name: 'device_id') String? deviceId,
+  });
 }
 
 /// @nodoc
@@ -81,7 +102,11 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? password = null}) {
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+    Object? deviceId = freezed,
+  }) {
     return _then(
       _value.copyWith(
             email: null == email
@@ -92,6 +117,10 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
                 ? _value.password
                 : password // ignore: cast_nullable_to_non_nullable
                       as String,
+            deviceId: freezed == deviceId
+                ? _value.deviceId
+                : deviceId // ignore: cast_nullable_to_non_nullable
+                      as String?,
           )
           as $Val,
     );
@@ -106,7 +135,11 @@ abstract class _$$AuthEntityImplCopyWith<$Res> implements $AuthCopyWith<$Res> {
   ) = __$$AuthEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String password});
+  $Res call({
+    String email,
+    String password,
+    @JsonKey(name: 'device_id') String? deviceId,
+  });
 }
 
 /// @nodoc
@@ -122,7 +155,11 @@ class __$$AuthEntityImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? password = null}) {
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+    Object? deviceId = freezed,
+  }) {
     return _then(
       _$AuthEntityImpl(
         email: null == email
@@ -133,6 +170,10 @@ class __$$AuthEntityImplCopyWithImpl<$Res>
             ? _value.password
             : password // ignore: cast_nullable_to_non_nullable
                   as String,
+        deviceId: freezed == deviceId
+            ? _value.deviceId
+            : deviceId // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -141,7 +182,11 @@ class __$$AuthEntityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AuthEntityImpl implements AuthEntity {
-  _$AuthEntityImpl({required this.email, required this.password});
+  _$AuthEntityImpl({
+    required this.email,
+    required this.password,
+    @JsonKey(name: 'device_id') this.deviceId,
+  });
 
   factory _$AuthEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AuthEntityImplFromJson(json);
@@ -150,10 +195,13 @@ class _$AuthEntityImpl implements AuthEntity {
   final String email;
   @override
   final String password;
+  @override
+  @JsonKey(name: 'device_id')
+  final String? deviceId;
 
   @override
   String toString() {
-    return 'Auth.entity(email: $email, password: $password)';
+    return 'Auth.entity(email: $email, password: $password, deviceId: $deviceId)';
   }
 
   @override
@@ -163,12 +211,14 @@ class _$AuthEntityImpl implements AuthEntity {
             other is _$AuthEntityImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.deviceId, deviceId) ||
+                other.deviceId == deviceId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, email, password);
+  int get hashCode => Object.hash(runtimeType, email, password, deviceId);
 
   /// Create a copy of Auth
   /// with the given fields replaced by the non-null parameter values.
@@ -181,27 +231,42 @@ class _$AuthEntityImpl implements AuthEntity {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) entity,
+    required TResult Function(
+      String email,
+      String password,
+      @JsonKey(name: 'device_id') String? deviceId,
+    )
+    entity,
   }) {
-    return entity(email, password);
+    return entity(email, password, deviceId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? entity,
+    TResult? Function(
+      String email,
+      String password,
+      @JsonKey(name: 'device_id') String? deviceId,
+    )?
+    entity,
   }) {
-    return entity?.call(email, password);
+    return entity?.call(email, password, deviceId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? entity,
+    TResult Function(
+      String email,
+      String password,
+      @JsonKey(name: 'device_id') String? deviceId,
+    )?
+    entity,
     required TResult orElse(),
   }) {
     if (entity != null) {
-      return entity(email, password);
+      return entity(email, password, deviceId);
     }
     return orElse();
   }
@@ -244,6 +309,7 @@ abstract class AuthEntity implements Auth {
   factory AuthEntity({
     required final String email,
     required final String password,
+    @JsonKey(name: 'device_id') final String? deviceId,
   }) = _$AuthEntityImpl;
 
   factory AuthEntity.fromJson(Map<String, dynamic> json) =
@@ -253,6 +319,9 @@ abstract class AuthEntity implements Auth {
   String get email;
   @override
   String get password;
+  @override
+  @JsonKey(name: 'device_id')
+  String? get deviceId;
 
   /// Create a copy of Auth
   /// with the given fields replaced by the non-null parameter values.

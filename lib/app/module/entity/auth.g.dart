@@ -10,7 +10,12 @@ _$AuthEntityImpl _$$AuthEntityImplFromJson(Map<String, dynamic> json) =>
     _$AuthEntityImpl(
       email: json['email'] as String,
       password: json['password'] as String,
+      deviceId: json['device_id'] as String?,
     );
 
 Map<String, dynamic> _$$AuthEntityImplToJson(_$AuthEntityImpl instance) =>
-    <String, dynamic>{'email': instance.email, 'password': instance.password};
+    <String, dynamic>{
+      'email': instance.email,
+      'password': instance.password,
+      'device_id': instance.deviceId,
+    };

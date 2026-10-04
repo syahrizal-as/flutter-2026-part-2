@@ -3,4 +3,5 @@ import 'package:absensi_2026/core/network/data_state.dart';
 
 abstract class LeaveRepository {
   Future<DataState> send(LeaveParamEntity param);
+  Future<DataState<List<LeaveEntity>>> getHistory();
 }
